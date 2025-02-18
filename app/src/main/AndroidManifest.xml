@@ -29,7 +29,7 @@
             android:name=".SMS"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_DELIVER" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" /> <!-- Cambiar aquí -->
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
