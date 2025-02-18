@@ -24,13 +24,14 @@
         android:theme="@style/Theme.Appintents"
         tools:targetApi="31">
 
-        <!-- Actividad que mostrará los mensajes SMS -->
+        <!-- Activity que recibirá los mensajes SMS compartidos -->
         <activity
             android:name=".SMS"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" /> <!-- Cambiar aquí -->
+                <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
 
@@ -44,16 +45,7 @@
             </intent-filter>
         </activity>
 
-        <!-- BroadcastReceiver para recibir mensajes SMS -->
-        <receiver
-            android:name=".SmsReceiver"
-            android:permission="android.permission.RECEIVE_SMS"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
-            </intent-filter>
-        </receiver>
-
     </application>
+
 
 </manifest>
