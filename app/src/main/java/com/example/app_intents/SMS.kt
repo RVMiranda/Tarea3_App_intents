@@ -2,11 +2,9 @@ package com.example.app_intents
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.enableEdgeToEdge
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class SMS : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,10 +15,12 @@ class SMS : AppCompatActivity() {
         val sharedText = intent.getStringExtra(Intent.EXTRA_TEXT)
 
         if (sharedText != null) {
-            // Mostrar el texto recibido, por ejemplo en un TextView
-            Log.d("SMS", "Texto recibido: $sharedText")
-        } else {
-            Log.d("SMS", "No se recibió texto")
+            // Mostrar el texto recibido en un TextView
+            val textView: TextView = findViewById(R.id.textView)
+            textView.text = sharedText
+
+            // Mostrar un Toast con el texto
+            Toast.makeText(this, "Texto recibido: $sharedText", Toast.LENGTH_SHORT).show()
         }
     }
 }
