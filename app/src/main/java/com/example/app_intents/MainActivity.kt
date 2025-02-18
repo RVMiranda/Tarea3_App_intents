@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private val SMS_PERMISSION_CODE = 101
     private lateinit var btnEnviarSMS: Button
     private lateinit var intent: Intent
+    private lateinit var irASMS: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+        // ingrid
         btnEnviarSMS = findViewById(R.id.btn_EnviarSMS)
 
         btnEnviarSMS.setOnClickListener {
@@ -39,7 +41,14 @@ class MainActivity : AppCompatActivity() {
             enviarSMS()
         }
 
+        val buttonGoToSMS: Button = findViewById(R.id.buttonGoToSMS)
 
+        buttonGoToSMS.setOnClickListener{
+            val intent = Intent(this, SMS::class.java)
+            startActivity(intent)
+        }
+
+        /*
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -50,6 +59,7 @@ class MainActivity : AppCompatActivity() {
         if (!checkSmsPermissions()) {
             requestSmsPermissions()
         }
+        */
     }
 
     private fun enviarSMS() {
@@ -61,6 +71,8 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
+    /*
     // 🔹 Verifica si los permisos ya fueron concedidos
     private fun checkSmsPermissions(): Boolean {
         return ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS) == PackageManager.PERMISSION_GRANTED
@@ -86,4 +98,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+     */
 }
