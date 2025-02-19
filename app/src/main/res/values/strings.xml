@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">App-intents</string>
+    <string name="app_name">MultiAPP V1.0</string>
+    <string name="camara_text">Tomar foto 📷</string>
+    <string name="text_box">Esto es un texto editable :)</string>
+    <string name="text_box_hint">Escribe aquí...</string>
+    <string name="compartir_button">Compartir 📲</string>
+    <string name="texto_compartido">Aqui aparecerá el texto compartido...</string>
+    <string name="text_box_hint2">Escribe aquí el numero para enviar el SMS</string>
+    <string name="enviar_sms">Enviar SMS 📨</string>
 </resources>
